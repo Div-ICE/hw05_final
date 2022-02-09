@@ -133,5 +133,3 @@ class FollowModelTest(TestCase):
         follow = FollowModelTest.follow
         verbose_user = follow._meta.get_field('user').verbose_name
         self.assertEqual(verbose_user, 'Подписчик')
-
-    
