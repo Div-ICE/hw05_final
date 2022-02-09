@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+  {% extends 'base.html' %}
+  {% load thumbnail %}
+  
+  <head>  
+    {% block title %} {{ title }} {% endblock %}
+  </head>
+  <body>       
+    {% block content %} 
+    <main>
+      <div class="row">
+        <aside class="col-12 col-md-3">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Дата публикации: {{ pub_date|date:"d E Y" }} 
+            </li>
+            {%if group.slug%}     
+              <li class="list-group-item">
+                Группа: {{ group }}
+                <a href="{% url 'posts:group' slug=group.slug %}">
+                  все записи группы
+                </a>
+              </li>
+              {% endif %}
+              <li class="list-group-item">
+                Автор: {{ author }}
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+              Всего постов автора:  {{ count_posts }}
+            </li>
+            <li class="list-group-item">
+              <a href="{% url 'posts:profile' author%}">
+                все посты пользователя
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <article class="col-12 col-md-9">
+          {% include 'posts/includes/post_item.html' with post=post %}
+          {% for field in form %}
+            {% include 'posts/comments.html'  %}
+          {% endfor %}    
+        </article>
+      </div> 
+    </main>
+    {% endblock %} 
+  </body>
+</html>
