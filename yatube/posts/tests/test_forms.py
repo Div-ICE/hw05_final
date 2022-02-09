@@ -128,7 +128,6 @@ class PostFormTests(TestCase):
         self.assertEqual(PostFormTests.image, form_data['image'])
 
 
-
 class CommentFormTests(TestCase):
     @classmethod
     def setUpClass(cls):

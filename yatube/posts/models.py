@@ -1,6 +1,5 @@
-from os import name
 from django.contrib.auth import get_user_model
-from sorl.thumbnail import ImageField, delete 
+# from sorl.thumbnail import ImageField, delete
 from django.db import models
 
 
@@ -52,7 +51,7 @@ class Post(models.Model):
         blank=True,
         help_text='Загрузите изображение',
     )
-    
+
     def __str__(self):
         return self.text[:Post.CONST]
 
@@ -90,12 +89,12 @@ class Comment(models.Model):
 
 class Follow(models.Model):
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, 
+        User, on_delete=models.CASCADE,
         related_name='follower',
         verbose_name='Подписчик',
     )
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, 
+        User, on_delete=models.CASCADE,
         related_name='following',
         verbose_name='Автор',
     )
@@ -106,4 +105,3 @@ class Follow(models.Model):
 
     def __str__(self):
         return self.author
-

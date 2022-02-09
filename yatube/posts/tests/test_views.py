@@ -130,15 +130,15 @@ class TaskPagesTest(TestCase):
         post_title = self.post.text[:30]
         posts_count = Post.objects.filter(author=self.post.author).count()
         self.assertEqual(
-            response.context['post'], 
+            response.context['post'],
             self.post
         )
         self.assertEqual(
-            response.context['post'].text, 
+            response.context['post'].text,
             post_title
         )
         self.assertEqual(
-            response.context['post'].author.posts.count(), 
+            response.context['post'].author.posts.count(),
             posts_count
         )
         self.assertEqual(

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
-#from django.views.decorators.cache import cache_page
+# from django.views.decorators.cache import cache_page
 
 from .forms import PostForm, CommentForm
 from .models import Group, Post, Comment, Follow
@@ -11,7 +11,8 @@ from .models import Group, Post, Comment, Follow
 User = get_user_model()
 POST_CNT = 10
 
-#@cache_page(20)
+
+# @cache_page(20)
 def index(request):
     post_list = Post.objects.all().order_by('-pub_date')
 
@@ -157,8 +158,12 @@ def add_comment(request, post_id):
 
 @login_required
 def follow_index(request):
-    authors_list = Follow.objects.filter(user=request.user).values_list('author')
-    post_list = Post.objects.filter(author__in=authors_list).order_by('-pub_date')
+    authors_list = Follow.objects.filter(
+        user=request.user
+    ).values_list('author')
+    post_list = Post.objects.filter(
+        author__in=authors_list
+    ).order_by('-pub_date')
     paginator = Paginator(post_list, POST_CNT)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
