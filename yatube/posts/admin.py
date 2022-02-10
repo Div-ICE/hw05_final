@@ -1,4 +1,3 @@
-from multiprocessing import cpu_count
 from django.contrib import admin
 
 from .models import Group, Post, Comment
