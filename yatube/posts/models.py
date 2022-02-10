@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-# from sorl.thumbnail import ImageField, delete
 from django.db import models
 
 
@@ -17,6 +16,10 @@ class Group(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Группа'
+        verbose_name_plural = 'Группы'
 
 
 class Post(models.Model):
@@ -55,11 +58,10 @@ class Post(models.Model):
     def __str__(self):
         return self.text[:Post.CONST]
 
-
-class Meta:
-    ordering = ('-pub_date',)
-    verbose_name = 'Пост'
-    verbose_name_plural = 'Посты'
+    class Meta:
+        ordering = ('-pub_date',)
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
 
 
 class Comment(models.Model):
