@@ -33,4 +33,11 @@ urlpatterns = [
         ),
         name='login'
     ),
+    path(
+        'password_change_form/',
+        views.PasswordChangeForm.as_view(
+            template_name='users/password_change_form.html'
+        ),
+        name='password_change_form'
+    ),
 ]

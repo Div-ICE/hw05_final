@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from django.test import TestCase
 
 
@@ -5,7 +7,7 @@ class ViewTestClass(TestCase):
     def test_error_page(self):
         """Запрос к non_existing_page вернет ошибку 404"""
         response = self.client.get('/non_existing_page/')
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
 
     def test_error_uses_correct_template(self):
         """URL-адрес использует соответствующий шаблон."""
