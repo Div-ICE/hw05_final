@@ -1,7 +1,6 @@
 from http import HTTPStatus
 
 from django.test import Client, TestCase
-from users.forms import User
 
 
 class AboutURLTests(TestCase):
@@ -21,7 +20,7 @@ class AboutURLTests(TestCase):
         # созданный в setUp()
         response = self.guest_client.get('/about/tech/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
-    
+
     def test_static_urls_uses_correct_template(self):
         """URL-адреса статичных страниц использует соответствующий шаблон."""
         # Шаблоны по адресам
