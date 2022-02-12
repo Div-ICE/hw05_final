@@ -29,13 +29,13 @@
           <button type="button" class="btn btn-light" disabled>Комментариев: {{ post.comments.count }}</button>
           {% endif %}
           <a class="btn btn-outline-primary" href="{% url 'posts:post_detail' post.id %}" role="button">
-            Добавить комментарий
+            Подробнее
           </a>
   
           <!-- Ссылка на редактирование поста для автора -->
           {% if user == post.author %}
           <a class="btn btn-outline-primary" href="{% url 'posts:post_edit' post.id %}" role="button">
-            Редактировать
+            Редактировать пост
           </a>
           {% endif %}
         </div>

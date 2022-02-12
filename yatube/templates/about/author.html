@@ -1,10 +1,25 @@
 <!-- templates/about/author.html -->
 {% extends "base.html" %}
 {% block title %}Об авторе проекта{% endblock %}
+
 {% block content %}
-<h1>Привет, я автор</h1>
-<p>
-  Тут я размещу информацию о себе используя свои умения верстать.
-  Картинки, блоки, элементы бустрап. А может быть, просто напишу несколько абзацев текста. 
-</p>
+<div class="row justify-content-center">
+  <div class="col-md-8 p-5">
+    <div class="card">
+      <div class="card-header">
+        Привет, я автор
+      </div>
+      <div class="card-body">
+        <p>
+          <ul>
+            Меня зовут Целенко Максим. <br>
+            Я сделал эту социальную сеть во время обучения в Яндекс.Практикуме
+            <li> <a href="https://github.com/Div-ICE" >Ссылка на Githab</a></li>
+            <li> <a href="mailto: div-ice@yandex.ru">Написать мне на e-mail </a></li>
+          </ul>
+        </p>
+      </div> <!-- card body -->
+    </div> <!-- card -->
+  </div> <!-- col -->
+</div> <!-- row -->
 {% endblock %} 
