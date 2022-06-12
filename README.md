@@ -1,4 +1,16 @@
 # Социальная сеть YaTube для публикации личных дневников
+#### Проект написан во время обучения в Яндекс.Практикуме на курсе BackEnd разработчик.
+#### Испрользуемые технологии:
+- Python,
+- Django
+- DjangoRestFramework
+- Django filter
+- Pytest
+- Pillow
+- Bootstrap
+- Sorl Thumbnails
+- Djoser
+- SQLight
 
 #### Реализовано:
 - регистрация пользователя,
@@ -42,28 +54,30 @@
 
 ## Установка и запуск проекта
 
-- Установите и активируйте виртуальное окружение
-For Linux/MacOS:
+#### Установите и активируйте виртуальное окружение
+- For Linux/MacOS:
 ```
 python3 -m venv venv
 source venv/Bin/activate
 ```
-For Windows:
+- For Windows:
 ```
 python -m venv venv
 source venv/Scripts/activate
 ```
 
-- Установите зависимости из файла requirements.txt
+#### Установите зависимости из файла requirements.txt
 ```
 pip install -r requirements.txt
 ``` 
-- Для запуска проекта, в папке с файлом manage.py выполните команду:
-For Linux/MacOS:
+#### Для запуска проекта, в папке с файлом manage.py выполните команду:
+- For Linux/MacOS:
 ```
 python3 manage.py runserver
 ```
-For Windows:
+- For Windows:
 ```
 python manage.py runserver
 ```
+
+#### Для доступа к сайту, перейдите по ссылке http://127.0.0.1:8000/
