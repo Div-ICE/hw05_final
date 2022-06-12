@@ -25,7 +25,7 @@ SECRET_KEY = 'l5il(j_qd8e4y5ryylb#8&2n$muf4=^s$*gfl=_gfb&1#@c_@p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -45,6 +45,7 @@ INTERNAL_IPS = [
 
 INSTALLED_APPS = [
     'posts.apps.PostsConfig',
+    'api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +57,8 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'sorl.thumbnail',
     'debug_toolbar',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 
 # Internationalization

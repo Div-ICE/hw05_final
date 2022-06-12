@@ -146,7 +146,7 @@ dmypy.json
 .mypy_cache
 
 # папки со статикой и медиа
-static/
+# static/ папку оставляю в гитхабе, т.к. там нужные файлы
 yatube/posts/static/
 yatube/media/
 

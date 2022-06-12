@@ -18,5 +18,3 @@ class ViewTestClass(TestCase):
             with self.subTest(address=address):
                 response = self.client.get(address)
                 self.assertTemplateUsed(response, template)
-        # Проверьте, что статус ответа сервера - 404
-        # Проверьте, что используется шаблон core/404.html
